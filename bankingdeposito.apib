@@ -1,0 +1,58 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# banking
+
+API allowing consumers to do banking deposit transactions.
+
+## Banking Collection [/CargoAbonoMDPService_WS]
+
+### Realizar Deposito [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-IBM-Client-Id: 123123123
+    
+    + Body
+
+            {
+                "Security": 
+                    {
+                        "UsernameToken": 
+                            {
+                                "Username": "pocuser",
+                                "Password": "abcpw"
+                            }
+                    }
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+              "GENERICFINANCIALSERVICE_IN": {
+                "CANAL": "MOTOR_PAG",
+                "SUCURSAL": "001",
+                "MODOTRX": "D",
+                "MODOINVOCACION": "S",
+                "RUTCLIENTE": "215606554",
+                "TRACENUMBER": "201807111008015",
+                "FECHACONTABLE": "20171117",
+                "MONEDACARGO": "CLP",
+                "BANCOCARGO": "028",
+                "CUENTACARGO": "1883976",
+                "TIPOCUENTACARGO": "00100",
+                "MONTOCARGO": "11",
+                "TIPOCUENTABONO": "0000",
+                "IDSERVICIO": "ABONOMOTORPAG",
+                "REFERENCIA": "Prueba APIM",
+                "DOCABONO": "12379"
+              }
+            }
