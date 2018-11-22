@@ -1,0 +1,75 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# banking
+
+API allowing consumers to do banking query transactions.
+
+## Banking Collection [/QUERY_CUSTACC_PORTAL_WS]
+
+### Consultar Cuenta [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-IBM-Client-Id: 123123123
+    
+    + Body
+            
+            {
+                "QUERY_CUSTACC_PORTAL_REQ": {
+                "QUERY_CUSTACC_PORTAL": {
+                        "SCODE": "INTERNET",
+                        "XREF": 11111111,
+                        "ACC": 2222222
+                    }
+                }
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+              "QUERY_CUSTACC_PORTAL_RESP": {
+                "REPLY_CUSTACC_PORTAL": {
+                  "XREF": "201810222011001$",
+                  "PMORE": "N",
+                  "PCOUNT": "1",
+                  "PROWS": "1",
+                  "PSTRNO": "1",
+                  "PENDNO": "1",
+                  "ACCSUM_PORTAL": {
+                    "CUSTNO": "000129460431",
+                    "ALTCUSTNO": "000129460431",
+                    "AUTHSTAT": "A",
+                    "RECSTAT": "O",
+                    "BRN": "001",
+                    "ACC": "00001751921",
+                    "CCY": "CLP",
+                    "AVLBAL": "46799",
+                    "CURBAL": "46699",
+                    "UNCOLAMNT": "0",
+                    "UNCOLAMNT_TANK": "0",
+                    "ACCOPENDT": "20030212",
+                    "ACCLS": "000",
+                    "LIABID": "000129460431",
+                    "LINEID": "0017519211 ",
+                    "LINESL": "1",
+                    "LINECCY": "CLP",
+                    "LMSTAT": "O",
+                    "AVL": "Y",
+                    "LIMITAMT": "800000",
+                    "UTILAMT": "0",
+                    "AVLAMT": "800000",
+                    "STDT": "20030213",
+                    "LNKTOLOC": "N"
+                  }
+                }
+              }
+            }
